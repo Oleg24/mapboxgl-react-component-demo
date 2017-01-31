@@ -1,0 +1,35 @@
+{
+  "name": "mapbox-gl-react-component",
+  "version": "1.0.0",
+  "description": "Basic setup for setting up mapbox-gl inside of React components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --port 3000"
+  },
+  "keywords": [
+    "react",
+    "mapboxgl",
+    "webpack"
+  ],
+  "author": "Oleg Yanchinskiy",
+  "license": "ISC",
+  "dependencies": {
+    "json-loader": "^0.5.4",
+    "mapbox-gl": "^0.21.0",
+    "material-ui": "^0.16.7",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-tap-event-plugin": "^2.0.1",
+    "transform-loader": "^0.2.3",
+    "webworkify-webpack": "^1.1.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-export-extensions": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "webpack": "^1.13.1"
+  }
+}
