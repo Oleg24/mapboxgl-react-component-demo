@@ -14,36 +14,36 @@ class Map extends React.Component {
 			zoom: 11
 		});
 
+
 		/* on initial load setup the headquarter location + icon */
 		map.on('load', function () {
-			map.addLayer({
-				"id": "symbols",
-				"type": "symbol",
-				"source": {
-					"type": "geojson",
-					"data": {
-						"type": "FeatureCollection",
-						"features": [
-							{
-								"type": "Feature",
-								"properties": {
-									"icon": "castle-15"
-								},
-								"geometry": {
-									"type": "Point",
-									"coordinates": [
-										-121.499104,
-										38.579791
-
-									]
-								}
-							}
-						]
-					}
-				},
-				"paint": {}
-			});
+			const firstLocation = ["-121.499104", "38.579791"];
+			const el = document.createElement('div');
+			el.className = 'marker';
+			el.style.backgroundImage = 'url(./assets/images/happy-smiley.png)';
+			el.style.width = '48px';
+			el.style.height = '48px';
+			new mapboxgl.Marker(el)
+				.setLngLat(firstLocation)
+				.addTo(map);
 		});
+
+		window.setTimeout(function () {
+			const newLocation = ["-77.036530", "38.897577"];
+			map.flyTo({
+				center: newLocation,
+				zoom: 11
+			});
+			const el = document.createElement('div');
+			el.className = 'marker';
+			el.style.backgroundImage = 'url(./assets/images/sad-face.png)';
+			el.style.width = '48px';
+			el.style.height = '48px';
+			new mapboxgl.Marker(el)
+				.setLngLat(newLocation)
+				.addTo(map);
+
+		}, 3000)
 	}
 
 	render() {

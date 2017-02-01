@@ -4,7 +4,7 @@ import Map from './components/Map';
 
 const Main = () => (
 	<div>
-		<div>hello webpack world</div>
+		<h3>Webpack React Mapbox Demo</h3>
 		<Map />
 	</div>
 );
